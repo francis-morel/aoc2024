@@ -7,6 +7,8 @@ import (
 	"slices"
 	"strconv"
 	"strings"
+
+	"github.com/francis-morel/aoc2024/helpers"
 )
 
 func Run() {
@@ -23,7 +25,7 @@ func RunPart1() {
 	result := 0
 
 	for i := range 1000 {
-		result += abs(left[i] - right[i])
+		result += helpers.Abs(left[i] - right[i])
 	}
 
 	fmt.Print("Part 1: ")
@@ -55,14 +57,6 @@ func RunPart2() {
 	}
 
 	fmt.Println("Part 2:", result)
-}
-
-func abs(value int) int {
-	if value < 0 {
-		return -value
-	} else {
-		return value
-	}
 }
 
 func getValues() (*[1000]int, *[1000]int) {
