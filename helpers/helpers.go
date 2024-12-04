@@ -26,3 +26,13 @@ func Abs(value int) int {
 		return value
 	}
 }
+
+func ReadWholeFile(file string) []byte {
+	data, err := os.ReadFile(file)
+
+	if err != nil {
+		panic(err)
+	}
+
+	return data
+}
